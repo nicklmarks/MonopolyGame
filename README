@@ -1,3 +1,9 @@
 README for Monopoly game
 First iteration: GameRunner and class that it uses are ready to be tested.
 
+Build.XML updates: run. clean. compile. works
+	To Be Fixed: test. can be used to test certain parts in a game easily
+		     jar. can be used to create the jar necessary for turnin
+		     javadoc and publish. can be used if we want to put on our public_html on csil.
+
+
