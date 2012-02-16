@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.ArrayList;
 
 /** deck class for monopoly game, used to initialize an array of cards. Well start with 10-20.
 Methods to include should be a constructor, draw card method.
@@ -11,15 +11,14 @@ public class Deck {
 	public Deck() {
 		Space go = new Space(0, 0, "GO");
 		Card card1 = new Card("move to go", true, false, 0, go);
-		Card card2 = new Card("move to first RailRoad", true, false, 0, new Space(5,0, "RR1");
+		Card card2 = new Card("move to first RailRoad", true, false, 0, new Space(5,0, "RR1"));
 		Card card3 = new Card("pay 50$", false, true, -50, go);	
 		Card card4 = new Card("earn 100$", false, true, 100, go);
 
-		string s = ""	
-		for(int i = 1; i<5; i++) {
-		    s = "card" + i; 	
-		    cardList.add(s);
-		}
+		cardList.add(1, card1);
+		cardList.add(2, card2);
+		cardList.add(3, card3);
+		cardList.add(4, card4);
 
 	}
 }
