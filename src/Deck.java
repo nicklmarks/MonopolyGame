@@ -21,4 +21,10 @@ public class Deck {
 		cardList.add(4, card4);
 
 	}
+	
+	public Card drawCard() {
+		int num = (int)Math.random() * 4 + 1;
+		Card yourCard = cardList.get(num);
+		return yourCard;
+	}
 }
