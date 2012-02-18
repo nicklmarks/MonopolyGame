@@ -118,7 +118,7 @@ public class Player{
 				System.out.println(" Your Card: " + mycard.getDescription());
 				if(mycard.getPayType() == true){this.money = this.money + mycard.getPayAmount();}
 				else if(mycard.getMoveType() == true){
-					this.location = mycard.getMove();
+					this.location = board.spaceList.get(mycard.getMove());
 					this.spaceAction(mg);
 				}
 			}
@@ -138,11 +138,11 @@ public class Player{
 		if(c != null){
 			int counter = 0;
 			for(int i=0; i<properties.size();i++){
-				if(properties.get(i).getColor().equals(c)){counter++;}
+				if(properties.get(i).getColor() != null && properties.get(i).getColor().equals(c)){counter++;}
 			}
 			if(counter == 3){
 				for(int j=0;j<properties.size();j++){
-					if(properties.get(j).getColor().equals(c)){properties.get(j).setMonopoly(true);}
+					if(properties.get(j).getColor() != null && properties.get(j).getColor().equals(c)){properties.get(j).setMonopoly(true);}
 				}
 				System.out.println("Congrats! You now own a monopoly of " + c);
 			}

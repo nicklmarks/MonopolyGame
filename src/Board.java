@@ -51,7 +51,7 @@ public Board(){
 	spaceList.add(new Property("Pink3", 0, 0, 160, 12, true, "Pink"));
 
 	//space 15 RailRoad2
-	spaceList.add(new Property("RailRoad2", 0, 0, 200, 0, false, null));
+	spaceList.add(new Property("RailRoad2", 0, 0, 200, 25, false, null));
 
 	//space 16 Property
 	spaceList.add(new Property("Orange1", 0, 0, 180, 14, true, "Orange"));
@@ -81,7 +81,7 @@ public Board(){
 	spaceList.add(new Property("Red3", 0, 0, 240, 20, true, "Red"));
 
 	//space 25 RailRoad3
-	spaceList.add(new Property("RailRoad3", 0, 0, 200, 0, false, null));
+	spaceList.add(new Property("RailRoad3", 0, 0, 200, 25, false, null));
 
 	//space 26 Property
 	spaceList.add(new Property("Yellow1", 0, 0, 260, 22, true, "Yellow"));
@@ -111,7 +111,7 @@ public Board(){
 	spaceList.add(new Property("Green3", 0, 0, 320, 28, true, "Green"));
 	
 	//space 35 RailRoad4
-	spaceList.add(new Property("RailRoad4", 0, 0, 200, 0, false, null));
+	spaceList.add(new Property("RailRoad4", 0, 0, 200, 25, false, null));
 
 	//space 36 Chance
 	spaceList.add(new Space(0, 0, "CHANCE"));

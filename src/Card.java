@@ -4,15 +4,15 @@ public class Card
 	private boolean moveType;
 	private boolean payType;
 	private int payAmount;
-	private Space move;
+	private int moveindex;
 	
-	public Card(String description, boolean moveType, boolean payType, int payAmount, Space move)
+	public Card(String description, boolean moveType, boolean payType, int payAmount, int moveindex)
 	{
 		this.description = description;
 		this.moveType = moveType;
 		this.payType = payType;
 		this.payAmount = payAmount;
-		this.move = move;
+		this.moveindex = moveindex;
 	}
 
 	public String getDescription()
@@ -35,8 +35,8 @@ public class Card
 		return payAmount;
 	}
 
-	public Space getMove()
+	public int getMove()
 	{
-		return move;
+		return moveindex;
 	}
 }

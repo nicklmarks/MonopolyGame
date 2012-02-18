@@ -15,8 +15,9 @@ public class GameRunner{
 			//what to do here if player is in jail:
 			if(mg.jail.contains(currentPlayer)){//if player is in jail:
 				System.out.println("Player " + currentPlayer.getName() + " : you are locked up in JAIL!");//print out you are locked in jail
-				skip = mg.dealWithJail(currentPlayer);;
+				skip = mg.dealWithJail(currentPlayer);
 			}//close jail if statement
+			else{skip = false;}
 			
 			if(skip == false){//skip this part if the player remains in jail
 				currentPlayer.playerReadout();//prints out player name, money, etc. to start turn
