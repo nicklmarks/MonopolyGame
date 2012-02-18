@@ -1,10 +1,10 @@
 public class Card
 {
-	String description;
-	boolean moveType;
-	boolean payType;
-	int payAmount;
-	Space move;
+	private String description;
+	private boolean moveType;
+	private boolean payType;
+	private int payAmount;
+	private Space move;
 	
 	public Card(String description, boolean moveType, boolean payType, int payAmount, Space move)
 	{
