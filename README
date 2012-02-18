@@ -1,4 +1,8 @@
 README for Monopoly game
+
+java code exported as a jar file that can be downloaded and 
+
+
 First iteration: GameRunner and class that it uses are ready to be tested.
 
 Build.XML updates: run. clean. compile. works
