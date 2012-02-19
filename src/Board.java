@@ -1,8 +1,11 @@
+//Board class to represent the board that the MonopolyGame is played on.
 import java.util.*;
 public class Board{
 
+//ArrayList spaceList holds all the spaces on the board.
 ArrayList<Space> spaceList = new ArrayList<Space>();
 
+//contructor for the Board class, initializes 0-39 Spaces in the spaceList.
 public Board(){
 
 	//space 0 

@@ -84,7 +84,7 @@
    <mkdir dir="dist" />                                                         
    <jar destfile="dist/${projectName}.jar" basedir="build">   
      <manifest>
-        <attribute name="Main-Class" value="MonopolyGameTest"/>
+        <attribute name="Main-Class" value="GameRunner"/>
      </manifest>
    </jar>                 
  </target> 
