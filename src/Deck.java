@@ -12,7 +12,7 @@ public class Deck {
 
 //constructor for Deck initializes the cardList Arraylist to hold all the necessary cards for a MonopolyGame.
 	public Deck() {
-		Card card0 = new Card("move to go", true, true, 200, 0);
+		Card card0 = new Card("move to go and collect 200$", true, true, 200, 0);
 		Card card1 = new Card("move to first RailRoad", true, false, 0, 5);
 		Card card2 = new Card("pay 50$", false, true, -50, 0);	
 		Card card3 = new Card("earn 100$", false, true, 100, 0);
