@@ -1,3 +1,4 @@
+//Card class used in MonopolyGame to represent the chance cards 
 public class Card
 {
 	private String description;

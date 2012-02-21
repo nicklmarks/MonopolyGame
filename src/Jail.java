@@ -34,7 +34,7 @@ public class Jail {
 	}
 	
 	public void freePlayer(Player p){
-		//removes the player's Cell from the jailList
+		//removes the player's Cell from the jailList, freeing the player
 		for(int i = 0;i<jailList.size();i++){
 			if(jailList.get(i).getPlayer() == p){jailList.remove(i);}
 		}

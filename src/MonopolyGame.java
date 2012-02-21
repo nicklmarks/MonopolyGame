@@ -2,16 +2,14 @@ import java.util.*;
 
 public class MonopolyGame{
 
-	//instance variables
+	//instance variables are public becauses they are all references which have getter and setter methods of their own.
 	public ArrayList<Player> playerList = new ArrayList<Player>();
 	public Board board = new Board();
 	public Input io = new Input();
 	public Jail jail = new Jail();
 	public Deck deck = new Deck();
 
-	//methods
-	
-		//moves player
+	//rolls the dice and moves the player that many spaces. gives him 200 if he passes go.
 	public void move(Player playa){
 		
 		int currentIndex = board.spaceList.indexOf(playa.getLocation()); //index of player
@@ -33,40 +31,49 @@ public class MonopolyGame{
 	}
 		
 	
-	
+	//interacts with the jail object, find out how many turns the player has been in jail and attempts to roll doubles on his behalf, or forces him to pay bail
+	//returns true if he player remains in jail
 	public boolean dealWithJail(Player currentPlayer){
-				if(jail.getPlayersTurns(currentPlayer) < 3){//if it is his first or second turn
-					System.out.println("This is turn number " + jail.getPlayersTurns(currentPlayer) + " behind bars, you must try and roll doubles:");//tell him it is his 1st or 2nd turn
-					boolean dubs = Dice.rollDoubles();//player rolls dice attempting to get doubles
-					if(dubs == true){//if he gets doubles, 
-						jail.freePlayer(currentPlayer);//he is freed 
-						System.out.println("You rolled doubles! You're free!");//tell hims hes freed
+				//if it is his first or second turn
+				if(jail.getPlayersTurns(currentPlayer) < 3){
+					System.out.println("This is turn number " + jail.getPlayersTurns(currentPlayer) + " behind bars, you must try and roll doubles:");
+					boolean dubs = Dice.rollDoubles();
+					//if he gets doubles he is freed
+					if(dubs == true){
+						jail.freePlayer(currentPlayer); 
+						System.out.println("You rolled doubles! You're free!");
 						return false;//control passes down to the while loop
 					}
-					else{//if he doesnt get doubles, he stays in jail
-						System.out.println("You failed to roll doubles! you will remain in JAIL!");//tell him he didnt and he is still in jail
-						jail.incrementTurns(currentPlayer);//increment his turns
+					//if he doesnt get doubles, he stays in jail and his number of turns in jail is incremented
+					else{
+						System.out.println("You failed to roll doubles! you will remain in JAIL!");
+						jail.incrementTurns(currentPlayer);
 						return true;//make control skip the while loop
 					}
-				}//close turns < 3 if statement
-				else{//if it is his third turn
-					System.out.println("This is turn number " + jail.getPlayersTurns(currentPlayer) + " if you fail to roll doubles, you must pay bail:");//tell him it is his 3rd turn in jail
-					boolean dubs = Dice.rollDoubles();//player rolls dice attempting to get doubles
-					if(dubs == true){//if he gets doubles,
-						jail.freePlayer(currentPlayer);//he is freed
-						System.out.println("You rolled doubles! You're free!");//tell him he is freed
+				}
+				//if it is his third turn
+				else{
+					System.out.println("This is turn number " + jail.getPlayersTurns(currentPlayer) + " if you fail to roll doubles, you must pay bail:");
+					boolean dubs = Dice.rollDoubles();
+					//if he gets doubles he is freed
+					if(dubs == true){
+						jail.freePlayer(currentPlayer);
+						System.out.println("You rolled doubles! You're free!");
 						return false;//control passes down the the while loop
 					}
-					else{//if he doesnt get doubles
-						System.out.println("You failed to roll doubles! You must pay 50 dollars to free yourself");//tell him he didnt, and he must pay bail
-						currentPlayer.addMoney(-50);//he pays bail
-						jail.freePlayer(currentPlayer);//he is freed
+					//if he doesnt get doubles he must pay bail
+					else{
+						System.out.println("You failed to roll doubles! You must pay 50 dollars to free yourself");
+						currentPlayer.addMoney(-50);
+						jail.freePlayer(currentPlayer);
 						return false;//control passes down to the while loop
 					}
-				}//close else statement		
+				}	
 	}
+	
+	//gets input from the use as to the number of players and each players name, initializes the playerList
 	public void initializePlayers(){
-		//gets input from the use as to the number of players and each players name, initializes the playerList
+		
 		System.out.println("Input the number of players (2-4):");
 		try{
 			int numPlayers = Integer.parseInt(io.getInput());
@@ -81,8 +88,9 @@ public class MonopolyGame{
 		}
 	}
 	
+	//checks if the player is bankrupt, if so removes him from the game
+	//returns the index of the player who's turn it is next
 	public int checkBankrupt(Player p, int nextPlayerIndex){
-		//checks if the player is bankrupt, returns the index of the player who's turn it is next
 		if (p.getBankrupt() == true){ 
 		playerList.remove(p);
 		return nextPlayerIndex - 1;
