@@ -1,6 +1,6 @@
 README for Monopoly game
 
-java code exported as a jar file that can be downloaded.
+java code exported as a jar file that can be downloaded from the MonopolyGame/dist directory.
 
 To run the .jar file simply type 
 java -jar MonopolyGame.jar

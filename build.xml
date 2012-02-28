@@ -6,10 +6,10 @@
   <property environment="env"/> <!-- load the environment variables --> 
   <property name="webRoot" value="${env.HOME}/public_html/cs48" />
   <property name="webBaseURL" value="http://www.cs.ucsb.edu/~${env.USER}/cs48" />
-
   <property name="projectName" value="MonopolyGame" /> 
   <property name="javadocDest" value="${webRoot}/${projectName}/javadoc" /> 
   <property name="javadocURL" value="${webBaseURL}/${projectName}/javadoc" /> 
+  <property name="mainClass" value="GameRunner" /> 
 
  <target name="compile" > 
 	<mkdir dir="build" /> 
@@ -21,8 +21,8 @@
     </javac>       
  </target>
 
-  <target name="run" depends="compile" description="run the ${projectName} program"> 
-    <java classname="GameRunner" classpath="build" />
+  <target name="run" depends="compile" description="run the MonopolyGame program"> 
+    <java classname="${mainClass}" classpath="build" />
   </target>
 
   <target name="clean" description="delete unnecessary files and directories">
